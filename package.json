@@ -1,0 +1,22 @@
+{
+  "name": "react-essentials-start",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@blueprintjs/core": "^5.10.1",
+    "@blueprintjs/icons": "^5.9.0",
+    "@codux-boards/react-blueprint": "^1.0.14",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.5.2"
+  },
+  "keywords": [],
+  "description": ""
+}
