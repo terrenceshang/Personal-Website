@@ -1,9 +1,11 @@
-.nameHeader,
-.greetingHeader {
+/* greeting.module.css */
+
+.greetingHeader,
+.nameHeader {
   font-weight: 700;
   font-style: normal;
   text-align: center;
-  color: black;
+  color: white;
 }
 
 .nameHeader {
@@ -23,4 +25,8 @@
   align-items: center;
   min-height: 100vh;
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 2rem;
 }

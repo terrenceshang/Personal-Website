@@ -1,5 +1,5 @@
 import styles from './myJourney.module.css';
-import { syftAnalyticsUtils } from '../utils/workExperience';
+import { workExperience } from '../utils/workExperience';
 
 function header(header) {
   return (
@@ -13,10 +13,10 @@ function header(header) {
   );
 }
 
-function workExperienceContainer(input) {
+function workExperienceContainer(input, key) {
   const { image, company, title, time, description, location, type } = input;
   return (
-    <div className={styles.workExperienceContainer}>
+    <div className={styles.workExperienceContainer} key={key}>
       <img src={image} alt="Company Logo" className={styles.companyImage} />
 
       <div className={styles.textContainer}>
@@ -33,10 +33,14 @@ function workExperienceContainer(input) {
 }
 
 export const MyJourney = () => {
+  const workExperienceList = Object.values(workExperience).map(experience => {
+    const key = `${experience.company}-${experience.time}`;
+    return workExperienceContainer(experience, key);
+  });
   return (
     <div>
       {header('My Journey')}
-      {workExperienceContainer(syftAnalyticsUtils)}
+      {workExperienceList}
     </div>
   );
 };

@@ -20,7 +20,7 @@
 .workExperienceContainer {
   display: flex;
   align-items: center;
-  margin: 2rem 20rem;
+  margin: 2rem 20rem 4rem 20rem;
 }
 
 .companyImage {
@@ -40,7 +40,7 @@
 .companyName {
   font-size: 30px;
   margin: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .title {
