@@ -1,5 +1,5 @@
 import styles from './myJourney.module.css';
-import { workExperience } from '../utils/workExperience';
+import { workExperience } from '../utils/utils';
 
 function header(header) {
   return (
