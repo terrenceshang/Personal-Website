@@ -1,0 +1,26 @@
+.nameHeader,
+.greetingHeader {
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  color: black;
+}
+
+.nameHeader {
+  font-size: 50px;
+  line-height: 60px;
+}
+
+.greetingHeader {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.centreView {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}

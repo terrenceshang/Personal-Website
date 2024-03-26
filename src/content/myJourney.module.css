@@ -1,0 +1,69 @@
+.header {
+  text-align: center;
+  font-weight: 500;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.line {
+  height: 0.2rem;
+  width: 8rem;
+  background-color: black;
+  margin: 0 1rem;
+}
+
+.workExperienceContainer {
+  display: flex;
+  align-items: center;
+  margin: 2rem 20rem;
+}
+
+.companyImage {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  margin: 0 2rem 2rem 2rem;
+  border-radius: 1.5rem;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.companyName {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.time {
+  font-size: 18px;
+  margin: 5px 0 2.5px 0;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.locationTime {
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+
+.description {
+  margin: 5px 0;
+  font-size: 15px;
+  text-align: justify;
+  text-align-last: left;
+}
