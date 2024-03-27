@@ -13,6 +13,7 @@
     "@codux-boards/react-blueprint": "^1.0.14",
     "react": "^18.2.0",
     "react-dom": "^18.0.0",
+    "react-toastify": "^10.0.5",
     "typescript": "^5.4.3"
   },
   "devDependencies": {
@@ -30,5 +31,6 @@
   "keywords": [],
   "main": "vite.config.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }

@@ -3,9 +3,10 @@ import styles from './contactInfo.module.css';
 import { useState } from 'react';
 import { Button, FormGroup, InputGroup, TextArea, Icon, Intent } from '@blueprintjs/core';
 import { header } from './content';
-import whatsappLogo from '../assets/WhatsAppLogoRound.jpg';
 import syftProfileImage from '../assets/SyftProfile2.jpg';
 import { IconNames, IconSize } from '@blueprintjs/icons';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const { zeroToOneQuote, zeroToOneReference, gitHubURL, linkedInURL, phoneNumber, email, gitHubLogo, linkedInLogo } =
   contactInfoUtils;
@@ -14,15 +15,44 @@ const profileIcon = <Icon icon={IconNames.USER} size={12} className={styles.icon
 const emailIcon = <Icon icon={IconNames.ENVELOPE} size={12} className={styles.icon} />;
 const phoneIcon = <Icon icon={IconNames.PHONE} size={12} className={styles.icon} />;
 
-const adjustTextAreaHeight = textAreaElement => {
-  textAreaElement.style.height = 'auto';
-  textAreaElement.style.height = `${textAreaElement.scrollHeight}px`;
-};
-
 const ContactMeForm = () => {
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    // Handle the form submission
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast.success('Email sent successfully');
+      } else {
+        toast.error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast.error('Error sending email');
+    }
+  };
+
+  const adjustTextAreaHeight = textAreaElement => {
+    const formContainer = document.querySelector(`.${styles.formContainer}`);
+
+    if (!formContainer) {
+      console.error('Form container not found');
+      return;
+    }
+
+    const maxHeight = formContainer.offsetHeight * 0.3;
+    textAreaElement.style.height = 'auto';
+    textAreaElement.style.height = `${textAreaElement.scrollHeight}px`;
+    textAreaElement.style.maxHeight = `${maxHeight}px`;
   };
 
   return (
@@ -88,6 +118,17 @@ const ContactMeForm = () => {
         <span className={styles.profileName}>Contact or WhatsApp me:</span>
         <> +27 65 939 7280</>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+      />
     </div>
   );
 };
