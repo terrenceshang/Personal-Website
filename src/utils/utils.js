@@ -1,6 +1,9 @@
 import syftAnalyticsLogo from '../assets/SyftAnalyticsLogo.jpg';
 import moharaLogo from '../assets/MoharaLogo.jpg';
 import uctLogo from '../assets/uctLogo.jpg';
+import gitHubLogo from '../assets/GitHubLogo.png';
+import linkedInLogo from '../assets/LinkedInLogo.png';
+import whatsAppLogo from '../assets/WhatsAppLogo.png';
 
 export const workExperience = {
   syftAnalytics: {
@@ -37,5 +40,11 @@ export const workExperience = {
 export const contactInfoUtils = {
   zeroToOneQuote: "EVERY ONE OF TODAY'S most famous and familiar ideas was once unknown and unsuspected",
   zeroToOneReference: 'Zero to One (Peter Thiel)',
-  bestWayToKnowMe: '',
+  gitHubURL: 'https://github.com/terrenceshang',
+  linkedInURL: 'https://www.linkedin.com/in/zenan-shang-b99ab0237/',
+  phoneNumber: '+27 65 939 7280',
+  email: 'zenanshang2@gmail.com',
+  whatsappLogo: whatsAppLogo,
+  gitHubLogo: gitHubLogo,
+  linkedInLogo: linkedInLogo,
 };

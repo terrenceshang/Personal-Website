@@ -1,17 +1,6 @@
 import styles from './myJourney.module.css';
 import { workExperience } from '../utils/utils';
-
-function header(header) {
-  return (
-    <header className={styles.header}>
-      <div className={styles.headerContent}>
-        <span className={styles.line}></span>
-        <span>{header}</span>
-        <span className={styles.line}></span>
-      </div>
-    </header>
-  );
-}
+import { header } from './content';
 
 function workExperienceContainer(input, key) {
   const { image, company, title, time, description, location, type } = input;
