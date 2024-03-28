@@ -15,6 +15,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/send-email', (req, res) => {
+  res.send('Processing email sending');
   const { fullName, email, phone, message } = req.body;
   const mailOptions = {
     from: email,

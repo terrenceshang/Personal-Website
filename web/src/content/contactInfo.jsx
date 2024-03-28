@@ -1,6 +1,6 @@
 import { contactInfoUtils } from '../utils/utils';
 import styles from './contactInfo.module.css';
-import { useState } from 'react';
+import '../primaryStyling.css';
 import { Button, FormGroup, InputGroup, TextArea, Icon, Intent } from '@blueprintjs/core';
 import { header } from './content';
 import syftProfileImage from '../assets/SyftProfile2.jpg';
@@ -8,7 +8,7 @@ import { IconNames, IconSize } from '@blueprintjs/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const { zeroToOneQuote, zeroToOneReference, gitHubURL, linkedInURL, phoneNumber, email, gitHubLogo, linkedInLogo } =
+const { zeroToOneQuote, zeroToOneReference, gitHubURL, linkedInURL, phoneNumber, gitHubLogo, linkedInLogo } =
   contactInfoUtils;
 
 const profileIcon = <Icon icon={IconNames.USER} size={12} className={styles.icon} />;
@@ -22,7 +22,7 @@ const ContactMeForm = () => {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch('http://localhost:3001/send-email', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ const ContactMeForm = () => {
         <img src={syftProfileImage} alt="Zenan Shang" className={styles.profileImage} />
         <h4 className={styles.profileName}>Zenan Shang</h4>
         <span className={styles.profileName}>Contact or WhatsApp me:</span>
-        <> +27 65 939 7280</>
+        <>{phoneNumber}</>
       </div>
       <ToastContainer
         position="top-center"
@@ -160,18 +160,8 @@ const ContactMeIcons = () => {
 };
 
 export const ContactInfo = () => {
-  const [message, setMessage] = useState('');
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    console.log('Sending', { email, message });
-    setMessage('');
-    setEmail('');
-  };
-
   return (
-    <div>
+    <div className="contentWrapper">
       {header('CONTACT ME')}
       <ContactMeForm />
       <ContactMeIcons />

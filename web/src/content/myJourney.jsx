@@ -1,6 +1,7 @@
 import styles from './myJourney.module.css';
 import { workExperience } from '../utils/utils';
 import { header } from './content';
+import '../primaryStyling.css';
 
 function workExperienceContainer(input, key) {
   const { image, company, title, time, description, location, type } = input;
@@ -27,7 +28,7 @@ export const MyJourney = () => {
     return workExperienceContainer(experience, key);
   });
   return (
-    <div>
+    <div className="contentWrapper">
       {header('My Journey')}
       {workExperienceList}
     </div>
