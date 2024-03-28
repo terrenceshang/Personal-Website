@@ -9,8 +9,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'yourEmail@gmail.com',
-    pass: 'yourPassword',
+    user: 'contactmezenan@gmail.com',
+    pass: 'hqbd fdan pqhp rytc',
   },
 });
 
@@ -25,6 +25,7 @@ app.post('/send-email', (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
+      console.error('Error sending email:', error);
       res.status(500).send('Error sending email');
     } else {
       res.send('Email sent successfully');

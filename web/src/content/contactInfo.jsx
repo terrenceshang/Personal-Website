@@ -62,6 +62,7 @@ const ContactMeForm = () => {
           <FormGroup label="Full name" labelFor="text" className={styles.formGroup}>
             <div className={styles.inputBox}>
               <InputGroup
+                name="fullName"
                 id="text"
                 placeholder="Jane Doe"
                 type="text"
@@ -74,6 +75,7 @@ const ContactMeForm = () => {
           <FormGroup label="Email" labelFor="email" className={styles.formGroup}>
             <div className={styles.inputBox}>
               <InputGroup
+                name="email"
                 id="email"
                 placeholder="example@domain.com"
                 type="email"
@@ -86,6 +88,7 @@ const ContactMeForm = () => {
           <FormGroup label="Mobile Number" labelFor="phone" className={styles.formGroup}>
             <div className={styles.inputBox}>
               <InputGroup
+                name="phone"
                 id="phone"
                 placeholder="+1 (555) 123-4567"
                 type="tel"
@@ -98,6 +101,7 @@ const ContactMeForm = () => {
           <FormGroup label="Message" labelFor="Message" className={styles.formGroup}>
             <div className={styles.inputBox}>
               <TextArea
+                name="message"
                 id="message-textarea"
                 placeholder="Type your message here"
                 fill={true}
