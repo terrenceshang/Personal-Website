@@ -7,6 +7,8 @@ import syftProfileImage from '../assets/SyftProfile2.jpg';
 import { IconNames, IconSize } from '@blueprintjs/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { localConfig } from '../configs';
+import React, { useState } from 'react';
 
 const { zeroToOneQuote, zeroToOneReference, gitHubURL, linkedInURL, phoneNumber, gitHubLogo, linkedInLogo } =
   contactInfoUtils;
@@ -16,13 +18,30 @@ const emailIcon = <Icon icon={IconNames.ENVELOPE} size={12} className={styles.ic
 const phoneIcon = <Icon icon={IconNames.PHONE} size={12} className={styles.icon} />;
 
 const ContactMeForm = () => {
+  const [fullNameValid, setFullNameValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true);
+  const [phoneValid, setPhoneValid] = useState(true);
+  const [messageValid, setMessageValid] = useState(true);
+
   const handleSubmit = async event => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
 
+    setFullNameValid(!!data.fullName);
+    setEmailValid(!!data.email);
+    setPhoneValid(!!data.phone);
+    setMessageValid(!!data.message);
+
+    const isFormValid = data.fullName && data.email && data.phone && data.message;
+
+    if (!isFormValid) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
+
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/send-email`, {
+      const response = await fetch(`${localConfig.API_URL}/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +78,12 @@ const ContactMeForm = () => {
     <div className={styles.contactMeForm}>
       <div className={styles.formContainer}>
         <form onSubmit={handleSubmit}>
-          <FormGroup label="Full name" labelFor="text" className={styles.formGroup}>
+          <FormGroup
+            label="Full name"
+            labelFor="text"
+            className={styles.formGroup}
+            labelInfo={!fullNameValid && <span className={styles.requiredText}>*required</span>}
+          >
             <div className={styles.inputBox}>
               <InputGroup
                 name="fullName"
@@ -72,7 +96,12 @@ const ContactMeForm = () => {
             </div>
           </FormGroup>
 
-          <FormGroup label="Email" labelFor="email" className={styles.formGroup}>
+          <FormGroup
+            label="Email"
+            labelFor="email"
+            className={styles.formGroup}
+            labelInfo={!emailValid && <span className={styles.requiredText}>*required</span>}
+          >
             <div className={styles.inputBox}>
               <InputGroup
                 name="email"
@@ -85,7 +114,12 @@ const ContactMeForm = () => {
             </div>
           </FormGroup>
 
-          <FormGroup label="Mobile Number" labelFor="phone" className={styles.formGroup}>
+          <FormGroup
+            label="Mobile Number"
+            labelFor="phone"
+            className={styles.formGroup}
+            labelInfo={!phoneValid && <span className={styles.requiredText}>*required</span>}
+          >
             <div className={styles.inputBox}>
               <InputGroup
                 name="phone"
@@ -98,7 +132,12 @@ const ContactMeForm = () => {
             </div>
           </FormGroup>
 
-          <FormGroup label="Message" labelFor="Message" className={styles.formGroup}>
+          <FormGroup
+            label="Message"
+            labelFor="message-textarea"
+            className={styles.formGroup}
+            labelInfo={!messageValid && <span className={styles.requiredText}>*required</span>}
+          >
             <div className={styles.inputBox}>
               <TextArea
                 name="message"

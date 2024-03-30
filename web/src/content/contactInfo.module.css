@@ -178,3 +178,9 @@
   display: flex;
   justify-content: center;
 }
+
+.requiredText {
+  color: red;
+  font-size: 14px;
+  font-style: italic;
+}
