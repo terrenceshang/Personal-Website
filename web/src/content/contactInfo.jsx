@@ -2,7 +2,7 @@ import { contactInfoUtils } from '../utils/utils';
 import styles from './contactInfo.module.css';
 import '../primaryStyling.css';
 import { Button, FormGroup, InputGroup, TextArea, Icon, Intent } from '@blueprintjs/core';
-import { header } from './content';
+import { header } from '../components/contentContainer';
 import syftProfileImage from '../assets/SyftProfile2.jpg';
 import { IconNames, IconSize } from '@blueprintjs/icons';
 import { ToastContainer, toast } from 'react-toastify';

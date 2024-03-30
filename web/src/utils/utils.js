@@ -48,3 +48,32 @@ export const contactInfoUtils = {
   gitHubLogo: gitHubLogo,
   linkedInLogo: linkedInLogo,
 };
+
+export const whoAmI = {
+  subHeaderLine: `Bridging Technology and Creativity: From Code to Keyboards`,
+  descriptionLine1: `Hi, I am Zenan, a recently graduated from the University of Cape Town with a Bachelor's in Business Science Specializing in Computer Science. My passion for software engineering has led me to diverse experiences in both frontend and backend development, contributing to projects across various platforms and organizations. I look forward to challenges and collaboration, and I bring forth a positive and dedicated attitude to every task I am working on`,
+  descriptionLine2: `I have accomplished multiple awards/accomplishments in and outside of the work/school environment: These include coming second place in SDG Challenge SA, honorary mention in Prescient Coding Challenge, ABRSM grade 2 piano with distinction, and performed in 2 concerts in retirement homes.`,
+  descriptionLine3: `My interests and hobbies involve technology, business, reading books, game development, cardio, and piano.`,
+};
+
+export const expertise = {
+  softwareDevelopment: {
+    title: 'Software Development',
+    details: 'I have been programming since 2017, tech stack includes Python, Java, SQL, C#',
+  },
+  webDevelopment: {
+    title: 'Website Development and Mobile Application Development',
+    details:
+      'Contributed and development many website and mobile applications, tech stack include: HTML, React, Javascript, Typescript, Flutter, Dart',
+  },
+  gameDevelopment: {
+    title: 'Game Development',
+    details:
+      'I have built multiple games of my own, including terminal-based, 2D, 3D computer and VR games. I find deep satisfaction in developing games as a side project',
+  },
+  agileWorkingEnvironment: {
+    title: 'Agile Working Environment',
+    details:
+      'I work more effectively in a collaborative and adaptive work environments, where team embraces open communication, flexibility and iterative methodologies',
+  },
+};

@@ -1,4 +1,4 @@
-import content from './content/content';
+import content from './content';
 import './index.css';
 
 function App() {
