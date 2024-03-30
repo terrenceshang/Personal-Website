@@ -4,17 +4,15 @@ import styles from './myExpertise.module.css';
 import { contentContainer } from '../components/contentContainer';
 import { expertise } from '../utils/utils';
 
-const { softwareDevelopment, webDevelopment, gameDevelopment, agileWorkingEnvironment } = expertise;
-
-const ExpertiseList = () => {
-  return <div>Hello World</div>;
-};
-
 export const MyExpertise = () => {
+  const ExpertiseList = Object.values(expertise).map(expertise => {
+    const key = `${expertise.title}`;
+    return contentContainer(expertise, key);
+  });
   return (
     <div className="contentWrapper">
       {header('My Expertise')}
-      <ExpertiseList />
+      {ExpertiseList}
     </div>
   );
 };

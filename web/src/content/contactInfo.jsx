@@ -2,13 +2,14 @@ import { contactInfoUtils } from '../utils/utils';
 import styles from './contactInfo.module.css';
 import '../primaryStyling.css';
 import { Button, FormGroup, InputGroup, TextArea, Icon, Intent } from '@blueprintjs/core';
-import { header } from '../components/contentContainer';
+import { header, subHeader } from '../components/contentContainer';
 import syftProfileImage from '../assets/SyftProfile2.jpg';
 import { IconNames, IconSize } from '@blueprintjs/icons';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { localConfig } from '../configs';
 import React, { useState } from 'react';
+import classNames from 'classnames';
 
 const { zeroToOneQuote, zeroToOneReference, gitHubURL, linkedInURL, phoneNumber, gitHubLogo, linkedInLogo } =
   contactInfoUtils;
@@ -179,7 +180,9 @@ const ContactMeForm = () => {
 const ContactMeIcons = () => {
   return (
     <>
-      {' '}
+      <span className={classNames(styles.moreLinks, styles.centerContainer)}>
+        you can also find more info about me here:
+      </span>
       <div className={styles.imageContainer}>
         <a href={gitHubURL} target="_blank" rel="noopener noreferrer">
           <img src={gitHubLogo} alt="GitHub" className={styles.image} />
@@ -202,6 +205,7 @@ export const ContactInfo = () => {
   return (
     <div className="contentWrapper">
       {header('CONTACT ME')}
+      {subHeader('I am available for freelance work.')}
       <ContactMeForm />
       <ContactMeIcons />
     </div>

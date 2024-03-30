@@ -3,7 +3,7 @@
   width: 8rem;
   height: 8rem;
   object-fit: cover;
-  margin: 0 2rem 2rem 2rem;
+  margin: 0 2rem 0rem 2rem;
   border-radius: 1.5rem;
 }
 
@@ -46,7 +46,7 @@
 
 .contentContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 80%;
   margin: 2rem auto;
 }
@@ -54,6 +54,7 @@
 @media (max-width: 768px) {
   .contentContainer {
     flex-direction: column;
+    align-items: center;
     margin: 1rem auto;
   }
 
