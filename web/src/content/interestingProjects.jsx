@@ -6,7 +6,6 @@ import { interestingProject } from '../utils/utils';
 
 export const InterestingProjects = () => {
   const interestingProjectsList = Object.entries(interestingProject).map(([key, project]) => {
-    console.log(key);
     return contentContainer(project, key);
   });
   return (
