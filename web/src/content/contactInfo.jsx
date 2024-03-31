@@ -76,7 +76,7 @@ const ContactMeForm = () => {
   };
 
   return (
-    <div className={styles.contactMeForm}>
+    <div className={classNames(styles.contactMeForm, styles.contactMeTheme)}>
       <div className={styles.formContainer}>
         <form onSubmit={handleSubmit}>
           <FormGroup
@@ -203,7 +203,7 @@ const ContactMeIcons = () => {
 
 export const ContactInfo = () => {
   return (
-    <div className="contentWrapper">
+    <div className={classNames('contentWrapper', styles.backgroundTheme)}>
       {header('CONTACT ME')}
       {subHeader('I am available for freelance work.')}
       <ContactMeForm />

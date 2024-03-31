@@ -1,20 +1,18 @@
 import { header } from '../components/contentContainer';
 import '../primaryStyling.css';
 import styles from './interestingProjects.module.css';
-
-const projectList = () => {
-  return (
-    <div>
-      <div>Hello world</div>
-    </div>
-  );
-};
+import { contentContainer } from '../components/contentContainer';
+import { interestingProject } from '../utils/utils';
 
 export const InterestingProjects = () => {
+  const interestingProjectsList = Object.entries(interestingProject).map(([key, project]) => {
+    console.log(key);
+    return contentContainer(project, key);
+  });
   return (
     <div className="contentWrapper">
       {header('INTERESTING PROJECTS')}
-      {projectList()}
+      <div className={styles.interestingProjectContainer}>{interestingProjectsList}</div>
     </div>
   );
 };

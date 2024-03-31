@@ -10,12 +10,12 @@ const Description = () => {
     <div>
       <div className={styles.line}>{descriptionLine1}</div>
       <div className={styles.cvLine}>
-        <span className={styles.cvContainer}>
-          View my CV:{' '}
-          <a href={cv} target="_blank" className={styles.cv}>
+        <div className={styles.cvContainer}>
+          <span>View my CV: </span>
+          <a href={cv} target="_blank">
             {fileName}
           </a>
-        </span>
+        </div>
       </div>
     </div>
   );

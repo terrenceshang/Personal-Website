@@ -192,3 +192,12 @@
   font-size: 14px;
   font-style: italic;
 }
+
+.backgroundTheme {
+  background-color: #7b848d;
+}
+
+.contactMeTheme {
+  background-color: white;
+  color: black;
+}

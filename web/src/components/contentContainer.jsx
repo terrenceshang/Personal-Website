@@ -23,10 +23,10 @@ export function subHeader(subHeader) {
 }
 
 export function contentContainer(input, key) {
-  const { image, name, title, time, description, location, type } = input;
+  const { image, name, title, time, description, location, type, skills, link } = input;
   return (
     <div className={styles.contentContainer} key={key}>
-      <img src={image} alt="Company Logo" className={styles.image} />
+      {image && <img src={image} alt="Company Logo" className={styles.image} />}
 
       <div className={styles.textContainer}>
         {name && <h3 className={styles.name}>{name}</h3>}
@@ -38,6 +38,20 @@ export function contentContainer(input, key) {
           </p>
         )}
         {description && <p className={styles.description}>{description}</p>}
+        {skills && (
+          <p>
+            <span className={styles.skills}>Skills: </span>
+            <span className={styles.skillsColor}>{skills}</span>
+          </p>
+        )}
+        {link && (
+          <div className={styles.link}>
+            <span>Link to GitHub: </span>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {link}
+            </a>
+          </div>
+        )}{' '}
       </div>
     </div>
   );

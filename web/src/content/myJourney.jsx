@@ -4,8 +4,7 @@ import '../primaryStyling.css';
 import { contentContainer } from '../components/contentContainer';
 
 export const MyJourney = () => {
-  const workExperienceList = Object.values(workExperience).map(experience => {
-    const key = `${experience.company}-${experience.time}`;
+  const workExperienceList = Object.entries(workExperience).map(([key, experience]) => {
     return contentContainer(experience, key);
   });
   return (

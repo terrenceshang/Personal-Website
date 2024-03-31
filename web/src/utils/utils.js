@@ -19,9 +19,10 @@ export const workExperience = {
     name: 'Syft Analytics',
     title: 'Software Engineer',
     time: 'Jan 2024 - March 2024',
-    description: `During my time at Syft, I have obtained great insight into working with React, Javascript, and Typescript. I was responsible for multiple parts of the Syft Analytics code including the backend permissions to reports, integrating the database to show reports, building new upgrade pages for reports, and styling/bug fixes for the website. My efforts in building new features and optimizing syft directly contributed to an increase to overall number of paid users for the software`,
+    description: `I was responsible for multiple parts of the Syft Analytics code including the backend permissions to reports, integrating the database to show reports, building new upgrade pages for reports, and styling/bug fixes for the website. My efforts in building new features and optimizing syft directly contributed to an increase to overall number of paid users for the software`,
     location: 'Bryanston, Gauteng, South Africa',
-    type: 'On-site',
+    type: 'Contract)',
+    skills: 'React, Javascript, Typescript, CSS, Postgres',
   },
 
   moharaVentureSA: {
@@ -31,7 +32,8 @@ export const workExperience = {
     time: 'Jun 2023 - Jul 2023',
     description: `During my Software Engineering Internship, I have learnt many essential skills that is beneficial for my future career. I honored my coding skills in Flutter and Dart, learnt effective version control with Git, and explored various API designs like SoccerAPI and GraphQL. My exposure to Agile Methodology highlighted the important of adaptability in a fast-paced development environment. This valuable experience has equipped me to contribute more effectively in any software development projects.`,
     location: 'Waterfront, Cape Town, South Africa',
-    type: 'hybrid',
+    type: 'Contract',
+    skills: 'Flutter, Dart, Integration, Git',
   },
 
   uctTutor: {
@@ -39,9 +41,10 @@ export const workExperience = {
     name: 'University of Cape Town',
     title: 'Tutor',
     time: 'Jan 2021- Nov 2023',
-    description: `This is my first job (contract-based) during my study at UCT. I was responsible for multiple courses including computer science, information systems, finance, and tax. The role includes tutoring and preparing tests and exams for the students, maintaining the students' overall well-being, and monitoring the students' performance.`,
+    description: `This is my first official job. I was responsible for multiple courses including computer science, information systems, finance, and tax. The role includes tutoring and preparing tests and exams for the students, maintaining the students' overall well-being, and monitoring the students' performance.`,
     location: 'Cape Town, South Africa',
-    type: 'on-site',
+    type: 'Contract',
+    skills: 'Python, Java, Algorithms',
   },
 };
 
@@ -88,5 +91,48 @@ export const expertise = {
     description:
       'I work more effectively in a collaborative and adaptive work environments, where team embraces open communication, flexibility and iterative methodologies',
     image: agileDevelopmentLogo,
+  },
+};
+
+export const interestingProject = {
+  vrAwe: {
+    name: 'VRAwe',
+    time: 'Duration: 10 months',
+    description:
+      'This was my final year project during my studies at UCT, I received a model and needed to create a virtual environment to study the relationship between awe and VR by immersing users in it. For this project, I touched both Blender and Unity. Blender for modeling and Unity for virtual reality. The outcome of this project was very successful, and the reports are public and can be viewed by anyone when visiting the UCT Computer Science Honor Projects website',
+    link: `https://github.com/terrenceshang/VRAwe`,
+    skills: 'Unity, Blender, C#, 3D Modeling',
+  },
+  PTJP: {
+    name: 'Public Transport Journey Planner',
+    time: 'Duration: 3 months',
+    description:
+      'This is a project involves in developing a website to getting best possible route for users to take from point A to B. This project involved, DB integration, finding shortest path, normalization, software engineering. I was responsible for 90% of the backend of this project.',
+    link: 'https://github.com/terrenceshang/CS-Capestone-Project',
+    skills: 'Python, tensorflow, Software Engineering, Dijkstra Algorithm',
+  },
+  dataSciencePrediction: {
+    name: 'Top data science jobs prediction',
+    time: 'Duration: 1 month',
+    description:
+      'A neural network-based AI system aims to predict the highest job title of an individual. A linear regression model was used as a baseline, thereafter a feedforward neural network used. I was responsible of building both models and tuning the hyperparameter.',
+    link: 'https://github.com/terrenceshang/Top-data-science-jobs-prediction',
+    skills: 'Jupyter Notebook, Tensorflow, Neural Network, Data Analyst',
+  },
+  JamSlam: {
+    name: 'Jam Slam',
+    time: 'Duration: 1 months',
+    description:
+      'A 2d adventurous puzzle game made for players to play collaboratively with each other. 90% of the game are made from scratch from the drawing to animation. This was made with inspiration from Fireboy & Watergirl game',
+    link: 'https://github.com/terrenceshang/Jam-Slam',
+    skills: 'Unity, Piskel, C#, 2D Animation',
+  },
+  vrCamp: {
+    name: 'VRCamp',
+    time: 'Duration: 1 months',
+    description:
+      'A VR game made to simulate the process of drilling wood to make fire in the wild. I was involved in designing and implementing the environment, vr movement, fire interaction and other field in the project',
+    link: 'https://github.com/terrenceshang/VRCamp',
+    skills: 'Unity, C#',
   },
 };
