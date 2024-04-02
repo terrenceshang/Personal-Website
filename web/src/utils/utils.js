@@ -136,3 +136,15 @@ export const interestingProject = {
     skills: 'Unity, C#',
   },
 };
+
+export const educations = {
+  bachelors: {
+    name: 'University of Cape Town',
+    title: 'Bachelor of Business Science Specializes in Computer Science',
+    image: uctLogo,
+    time: 'January 2020 - March 2024',
+    description:
+      'During my study, I was exposed to multiple fields of computer science including software engineering, game development, AI, VR, Networking, databases, and more. For my final year project, I focused on understanding the awe response in VR through different triggers. And for my third year, I developed a website for the metro system in Cape Town. There are many other cool projects I made such as games, a communication app similar to WhatsApp, AI models, openGL, Blender, and more. ',
+    skills: 'Python, Java, AI, VR, Networks, Database, Operating System, Game Design, Software Engineering',
+  },
+};
