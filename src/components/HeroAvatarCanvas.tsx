@@ -3,8 +3,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useAnimations, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
-// BASE_URL keeps the paths correct both locally and under /Personal-Website/
-// on GitHub Pages. The animated avatar is preferred; the original static
+// BASE_URL keeps the paths correct locally and on the GitHub Pages custom root
+// domain. The animated avatar is preferred; the original static
 // avatar is loaded automatically if the animated file is missing or broken.
 const PREFERRED_MODEL_URL = `${import.meta.env.BASE_URL}models/zenan-avatar-animated.glb`;
 const FALLBACK_MODEL_URL = `${import.meta.env.BASE_URL}models/zenan-avatar.glb`;
