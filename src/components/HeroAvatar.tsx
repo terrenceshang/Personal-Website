@@ -53,10 +53,10 @@ export default function HeroAvatar() {
   if (!isDesktop) return null;
 
   return (
-    <div ref={containerRef} className="hero__avatar" aria-hidden="true">
+    <div ref={containerRef} className="hero__avatar">
       <AvatarErrorBoundary>
         <Suspense fallback={<div className="hero__avatar-fallback" />}>
-          <HeroAvatarCanvas animate={inView && !reducedMotion} />
+          <HeroAvatarCanvas animate={inView && !reducedMotion} reducedMotion={reducedMotion} />
         </Suspense>
       </AvatarErrorBoundary>
     </div>
