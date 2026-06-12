@@ -141,8 +141,8 @@ export const projects: Project[] = [
       'Payments, reports, and housekeeping built around day-to-day hotel operations',
       'Admin permissions and tenant isolation for multi-property management',
     ],
-    tech: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'REST APIs'],
-    link: { label: 'View live site', url: 'https://bookmystay.co.za' },
+    tech: ['Vue', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'REST APIs'],
+    link: { label: 'View live site', url: 'https://www.bookmystayapp.co.za/' },
   },
   {
     name: 'Customer Portal Dashboard Work',
