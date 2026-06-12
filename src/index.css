@@ -226,19 +226,14 @@ ul {
 }
 
 .header__logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  flex: 0 0 32px;
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: linear-gradient(135deg, #2f6feb, #1d4ed8);
+  background: #010b24;
   border: 1px solid rgba(130, 179, 255, 0.35);
-  color: #ffffff;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  object-fit: cover;
 }
 
 .header__nav ul {

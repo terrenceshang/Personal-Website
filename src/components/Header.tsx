@@ -8,9 +8,14 @@ export default function Header() {
     <header className="header">
       <div className="container header__inner">
         <a className="header__brand" href="#home" onClick={() => setMenuOpen(false)}>
-          <span className="header__logo" aria-hidden="true">
-            ZS
-          </span>
+          <img
+            className="header__logo"
+            src="/img/brand/zenan-logo.svg"
+            alt=""
+            width="32"
+            height="32"
+            aria-hidden="true"
+          />
           {site.name}
         </a>
 
