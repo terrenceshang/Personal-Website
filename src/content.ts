@@ -141,7 +141,7 @@ export const projects: Project[] = [
       'Payments, reports, and housekeeping built around day-to-day hotel operations',
       'Admin permissions and tenant isolation for multi-property management',
     ],
-    tech: ['Vue', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'REST APIs'],
+    tech: ['Vue', 'Java', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'REST APIs'],
     link: { label: 'View live site', url: 'https://www.bookmystayapp.co.za/' },
   },
   {
