@@ -1,58 +1,94 @@
-import { contact, site } from '../content';
-import Section from './Section';
+import { useRef } from 'react';
+import { contact, outro, site } from '../content';
+import { gsap, MOTION_OK, useGSAP } from '../lib/gsap';
 import { FileIcon, GitHubIcon, GlobeIcon, LinkedInIcon, MailIcon, PinIcon } from './Icons';
 
+/** Cinematic outro: the closing statement rises out of a mask as it scrolls in. */
 export default function Contact() {
+  const ref = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(MOTION_OK, () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top 80%',
+              end: 'top 15%',
+              scrub: 0.5,
+            },
+            defaults: { ease: 'none' },
+          })
+          .from('.outro__glow', { scale: 0.5, autoAlpha: 0 }, 0)
+          .from('.outro__kicker', { autoAlpha: 0, y: 24 }, 0)
+          .from('.outro__line', { yPercent: 115, stagger: 0.25 }, 0.05)
+          .from('.outro__lead', { autoAlpha: 0, y: 30 }, 0.5)
+          .from('.outro__mail', { autoAlpha: 0, y: 30 }, 0.6)
+          .from('.outro__links li', { autoAlpha: 0, y: 24, stagger: 0.08 }, 0.7)
+          .from('.outro__meta', { autoAlpha: 0 }, 0.85);
+      });
+    },
+    { scope: ref },
+  );
+
   return (
-    <Section id="contact" kicker="05 — Contact" title={contact.title} lead={contact.lead} alt>
-      <div className="contact">
-        <a className="card contact__card" href={`mailto:${site.email}`}>
-          <MailIcon />
-          <div>
-            <h3>Email</h3>
-            <p>{site.email}</p>
-          </div>
+    <section id="contact" className="outro" ref={ref}>
+      <div className="outro__glow" aria-hidden="true" />
+      <div className="container outro__inner">
+        <p className="outro__kicker">{outro.kicker}</p>
+        <h2 className="outro__title" aria-label={outro.titleLines.join(' ')}>
+          {outro.titleLines.map(line => (
+            <span className="outro__mask" key={line} aria-hidden="true">
+              <span className="outro__line">{line}</span>
+            </span>
+          ))}
+        </h2>
+        <p className="outro__lead">{contact.lead}</p>
+
+        <a className="outro__mail" href={`mailto:${site.email}`}>
+          <MailIcon size={26} />
+          {site.email}
         </a>
-        <a className="card contact__card" href={site.github} target="_blank" rel="noreferrer">
-          <GitHubIcon />
-          <div>
-            <h3>GitHub</h3>
-            <p>github.com/terrenceshang</p>
-          </div>
-        </a>
-        <a className="card contact__card" href={site.linkedin} target="_blank" rel="noreferrer">
-          <LinkedInIcon />
-          <div>
-            <h3>LinkedIn</h3>
-            <p>Zenan Shang</p>
-          </div>
-        </a>
-        {site.cvUrl ? (
-          <a className="card contact__card" href={site.cvUrl} target="_blank" rel="noreferrer">
-            <FileIcon />
-            <div>
-              <h3>CV</h3>
-              <p>Download my CV</p>
-            </div>
-          </a>
-        ) : (
-          <div className="card contact__card contact__card--disabled" aria-disabled="true">
-            <FileIcon />
-            <div>
-              <h3>CV</h3>
-              <p>Coming soon</p>
-            </div>
-          </div>
-        )}
+
+        <ul className="outro__links">
+          <li>
+            <a href={site.github} target="_blank" rel="noreferrer">
+              <GitHubIcon size={18} />
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href={site.linkedin} target="_blank" rel="noreferrer">
+              <LinkedInIcon size={18} />
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            {site.cvUrl ? (
+              <a href={site.cvUrl} target="_blank" rel="noreferrer">
+                <FileIcon size={18} />
+                CV
+              </a>
+            ) : (
+              <span className="outro__link-disabled" aria-disabled="true">
+                <FileIcon size={18} />
+                CV — coming soon
+              </span>
+            )}
+          </li>
+        </ul>
+
+        <p className="outro__meta">
+          <span>
+            <PinIcon size={16} /> {site.location}
+          </span>
+          <span>
+            <GlobeIcon size={16} /> {site.availability}
+          </span>
+        </p>
       </div>
-      <p className="contact__footnote">
-        <span>
-          <PinIcon size={18} /> {site.location}
-        </span>
-        <span>
-          <GlobeIcon size={18} /> {site.availability}
-        </span>
-      </p>
-    </Section>
+    </section>
   );
 }

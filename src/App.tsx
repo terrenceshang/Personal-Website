@@ -1,8 +1,9 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
+import ProjectReel from './components/ProjectReel';
+import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -14,8 +15,9 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Skills />
         <Projects />
+        <ProjectReel />
+        <Skills />
         <Experience />
         <Contact />
       </main>
